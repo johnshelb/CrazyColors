@@ -1,0 +1,36 @@
+
+  <center><button onclick="multicolor()"><h1>Click Here to Go Wild!</h1></button>
+  <p id="p"></p></center>
+
+  <div id="1" style="height:100px"></div>
+  <div id="2" style="height:100px"></div>
+  <div id="3" style="height:100px"></div>
+  <div id="4" style="height:100px"></div>
+  <div id="5" style="height:100px"></div>
+  <div id="6" style="height:100px"></div>
+  <div id="7" style="height:100px"></div>
+  <div id="8" style="height:100px"></div>
+  <div id="9" style="height:100px"></div>
+
+
+
+  <script>
+  function multicolor(){
+    document.getElementById("p").innerHTML=""
+    var id = setInterval(col,300)
+    var x = 0
+
+    function col(){
+      if (x<15){
+        x++
+        for(let z=1;z<10;z++){
+          document.getElementById(`${z}`).style.backgroundColor=`rgb(${Math.floor((Math.random() * 256))},${Math.floor((Math.random() * 256))},${Math.floor((Math.random() * 256))})`
+        }
+      }
+      else{
+        document.getElementById("p").innerHTML="That's enough"
+        clearInterval(id)
+      }
+    }
+  }
+  </script>
